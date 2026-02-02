@@ -1,47 +1,69 @@
-/**
-* Template Name: Learner
-* Template URL: https://bootstrapmade.com/learner-bootstrap-course-template/
-* Updated: Jul 08 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function() {
 
-  // Navbar
-  fetch("navbar.html")
+ // ✅ Navbar Load
+fetch("navbar.html")
   .then(res => res.text())
   .then(data => {
     document.getElementById("navbar").innerHTML = data;
 
-    // ✅ Current Page Name
+    // ✅ Active Link Highlight
     let currentPage = window.location.pathname.split("/").pop();
 
     if (currentPage === "") {
       currentPage = "index.html";
     }
 
-    // ✅ All Navbar Links
-    let navLinks = document.querySelectorAll(".nav-link");
-
-    navLinks.forEach(link => {
-      let linkPage = link.getAttribute("href");
-
-      // ✅ Active Link Highlight
-      if (linkPage === currentPage) {
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
         link.classList.add("active");
-
-        // ✅ Dropdown Parent also Active
-        let dropdown = link.closest(".dropdown");
-        if (dropdown) {
-          dropdown.querySelector("a").classList.add("active");
-        }
       }
     });
+
+    // ✅ MOBILE NAV TOGGLE FIX (Inside Fetch)
+
+    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+
+    function mobileNavToogle() {
+      document.body.classList.toggle("mobile-nav-active");
+      mobileNavToggleBtn.classList.toggle("bi-list");
+      mobileNavToggleBtn.classList.toggle("bi-x");
+    }
+
+    // ✅ Toggle Button Click
+    if (mobileNavToggleBtn) {
+      mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+    }
+
+    // ✅ Close menu on link click
+    document.querySelectorAll("#navmenu a").forEach(navmenu => {
+      navmenu.addEventListener("click", () => {
+        if (document.body.classList.contains("mobile-nav-active")) {
+          mobileNavToogle();
+        }
+      });
+    });
+
+    // ✅ Dropdown Toggle (if any)
+    document.querySelectorAll(".navmenu .toggle-dropdown").forEach(drop => {
+      drop.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.parentNode.classList.toggle("active");
+        this.parentNode.nextElementSibling.classList.toggle("dropdown-active");
+        e.stopPropagation();
+      });
+    });
+
   });
 
-  // Navbar
-
+  // Footer
+  // ✅ Footer Load
+fetch("footer.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
  
   "use strict";
 
