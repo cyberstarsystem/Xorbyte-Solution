@@ -233,21 +233,27 @@
                   </p>
                 </div>
 
-                <form class="enrollment-form" id="enrollForm">
+                <!-- <form class="enrollment-form" id="enrollForm"> -->
+                  <form action="forms/enroll.php" method="POST" class="enrollment-form" class="enrollment-form php-email-form">
+
 
                   <!-- ✅ Name -->
                   <div class="row mb-4">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="form-label">First Name *</label>
-                        <input type="text" class="form-control" required>
+                        <!-- <input type="text" class="form-control" required> -->
+                         <input type="text" name="firstName" class="form-control" required>
+
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="form-label">Last Name *</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" name="lastName" class="form-control" required>
+
+                        <!-- <input type="text" class="form-control" required> -->
                       </div>
                     </div>
                   </div>
@@ -257,14 +263,18 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="form-label">Email Address *</label>
-                        <input type="email" class="form-control" required>
+                        <input type="email" name="email" class="form-control" required>
+
+                        <!-- <input type="email" class="form-control" required> -->
                       </div>
                     </div>
 
                     <div class="col-md-6">
                       <div class="form-group">
                         <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control">
+                        <!-- <input type="tel" class="form-control"> -->
+                         <input type="tel" name="phone" class="form-control">
+
                       </div>
                     </div>
                   </div>
@@ -275,7 +285,9 @@
                       <div class="form-group">
                         <label class="form-label">Selected Course *</label>
                         <!-- ✅ Auto Fill -->
-                        <select id="selectedCourse" class="form-select" required>
+                        <!-- <select id="selectedCourse" class="form-select" required> -->
+                          <select id="selectedCourse" name="course" class="form-select" required>
+
                           <option value="">Loading...</option>
                         </select>
                       </div>
@@ -287,8 +299,10 @@
                     <div class="col-12">
                       <div class="form-group">
                         <label class="form-label">Your Goal</label>
-                        <textarea class="form-control" rows="3"
-                          placeholder="Share what you want to achieve..."></textarea>
+                        <!-- <textarea class="form-control" rows="3"
+                          placeholder="Share what you want to achieve..."></textarea> -->
+                          <textarea name="motivation" class="form-control" placeholder="Share what you want to achieve..." rows="3"></textarea>
+
                       </div>
                     </div>
                   </div>
