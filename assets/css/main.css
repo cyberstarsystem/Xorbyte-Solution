@@ -13,8 +13,9 @@
 # Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font: "Poppins", sans-serif;
   --heading-font: "Raleway", sans-serif;
   --nav-font: "Ubuntu", sans-serif;
 }
@@ -87,6 +88,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -162,6 +164,84 @@ h6 {
   }
 }
 
+/* TOP BAR */
+.topbar {
+  background: var(--nav-color);
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+.topbar a{
+  color: #fff;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+
+.topbar-item i {
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+.topbar-item span {
+  font-weight: 400;
+}
+
+/* Social Icons */
+.topbar-social a {
+  color: #cfd6ff;
+  font-size: 15px;
+  margin-left: 12px;
+  transition: 0.3s ease;
+}
+
+.topbar-social a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Default navbar state */
+#header {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  transition: 
+    transform 0.35s ease,
+    opacity 0.25s ease,
+    box-shadow 0.3s ease;
+}
+
+/* When navbar becomes fixed */
+#header.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(0);
+  opacity: 1;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+}
+
+/* Initial hidden state (for animation) */
+#header:not(.navbar-fixed) {
+  transform: translateY(0);
+}
+
+/* Spacer to prevent content jump */
+.navbar-spacer {
+  height: 80px; /* adjust if navbar height changes */
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
@@ -175,6 +255,8 @@ h6 {
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
+  position: sticky;
+  top: 0;
 }
 
 .header .logo {
@@ -8062,4 +8144,16 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+html, body {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+.main,
+.index-page,
+.page-wrapper,
+.wrapper {
+  overflow: visible !important;
 }

@@ -1,84 +1,97 @@
 
 
-(function() {
+(function () {
 
- // ✅ Navbar Load
-fetch("navbar.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("navbar").innerHTML = data;
+  // ✅ Navbar Load
+  fetch("./navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
 
-    // ✅ Active Link Highlight
-    let currentPage = window.location.pathname.split("/").pop();
+      // ✅ Active Link Highlight
+      let currentPage = window.location.pathname.split("/").pop();
 
-    if (currentPage === "") {
-      currentPage = "index.html";
-    }
-
-    document.querySelectorAll(".nav-link").forEach(link => {
-      if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
+      if (currentPage === "") {
+        currentPage = "index.html";
       }
-    });
 
-    // ✅ MOBILE NAV TOGGLE FIX (Inside Fetch)
-
-    const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
-
-    function mobileNavToogle() {
-      document.body.classList.toggle("mobile-nav-active");
-      mobileNavToggleBtn.classList.toggle("bi-list");
-      mobileNavToggleBtn.classList.toggle("bi-x");
-    }
-
-    // ✅ Toggle Button Click
-    if (mobileNavToggleBtn) {
-      mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
-    }
-
-    // ✅ Close menu on link click
-    document.querySelectorAll("#navmenu a").forEach(navmenu => {
-      navmenu.addEventListener("click", () => {
-        if (document.body.classList.contains("mobile-nav-active")) {
-          mobileNavToogle();
+      document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
-    });
 
-    // ✅ Dropdown Toggle (if any)
-    document.querySelectorAll(".navmenu .toggle-dropdown").forEach(drop => {
-      drop.addEventListener("click", function (e) {
-        e.preventDefault();
-        this.parentNode.classList.toggle("active");
-        this.parentNode.nextElementSibling.classList.toggle("dropdown-active");
-        e.stopPropagation();
+      // ✅ MOBILE NAV TOGGLE FIX (Inside Fetch)
+
+      const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
+
+      function mobileNavToogle() {
+        document.body.classList.toggle("mobile-nav-active");
+        mobileNavToggleBtn.classList.toggle("bi-list");
+        mobileNavToggleBtn.classList.toggle("bi-x");
+      }
+
+      // ✅ Toggle Button Click
+      if (mobileNavToggleBtn) {
+        mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
+      }
+
+      // ✅ Close menu on link click
+      document.querySelectorAll("#navmenu a").forEach(navmenu => {
+        navmenu.addEventListener("click", () => {
+          if (document.body.classList.contains("mobile-nav-active")) {
+            mobileNavToogle();
+          }
+        });
       });
-    });
 
-  });
+      // ✅ Dropdown Toggle (if any)
+      document.querySelectorAll(".navmenu .toggle-dropdown").forEach(drop => {
+        drop.addEventListener("click", function (e) {
+          e.preventDefault();
+          this.parentNode.classList.toggle("active");
+          this.parentNode.nextElementSibling.classList.toggle("dropdown-active");
+          e.stopPropagation();
+        });
+      });
+
+    });
 
   // Footer
   // ✅ Footer Load
-fetch("footer.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("footer").innerHTML = data;
-  });
- 
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+
   "use strict";
 
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  function initNavbarFixed() {
+    const header = document.getElementById("header");
+    if (!header) return;
+
+    const spacer = document.createElement("div");
+    spacer.className = "navbar-spacer";
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 120) {
+        if (!header.classList.contains("navbar-fixed")) {
+          header.classList.add("navbar-fixed");
+          header.after(spacer);
+        }
+      } else {
+        header.classList.remove("navbar-fixed");
+        if (spacer.parentNode) spacer.remove();
+      }
+    });
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+  window.addEventListener("load", initNavbarFixed);
+
 
   /**
    * Mobile nav toggle
@@ -110,7 +123,7 @@ fetch("footer.html")
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -171,7 +184,7 @@ fetch("footer.html")
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
@@ -192,12 +205,12 @@ fetch("footer.html")
 
   const pricingContainers = document.querySelectorAll('.pricing-toggle-container');
 
-  pricingContainers.forEach(function(container) {
+  pricingContainers.forEach(function (container) {
     const pricingSwitch = container.querySelector('.pricing-toggle input[type="checkbox"]');
     const monthlyText = container.querySelector('.monthly');
     const yearlyText = container.querySelector('.yearly');
 
-    pricingSwitch.addEventListener('change', function() {
+    pricingSwitch.addEventListener('change', function () {
       const pricingItems = container.querySelectorAll('.pricing-item');
 
       if (this.checked) {
