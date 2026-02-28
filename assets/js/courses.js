@@ -7,7 +7,7 @@ const courses = [
       "Master MongoDB, Express.js, React.js, and Node.js to build complete full-stack web applications from scratch.",
     level: "Beginner",
     duration: "12 Weeks",
-    img: "assets/img/education/students-9.webp",
+    img: "assets/img/course/mern.png",
     badge: "Featured",
     rating: "4.8",
     language: "English",
@@ -72,7 +72,7 @@ const courses = [
       "Learn React.js along with responsive UI design, animations, and real-world project development.",
     level: "Intermediate",
     duration: "8 Weeks",
-    img: "assets/img/education/campus-4.webp",
+    img: "assets/img/course/react.webp",
     badge: "New",
     rating: "4.7",
     language: "Hindi",
@@ -125,64 +125,64 @@ const courses = [
   },
 
   // ✅ 3 Web Design Masterclass
-  {
-    id: 3,
-    title: "Professional Web Design Masterclass",
-    description:
-      "Become a creative web designer by learning HTML, CSS, Bootstrap, Tailwind, and modern layouts.",
-    level: "Beginner",
-    duration: "6 Weeks",
-    img: "assets/img/education/education-5.webp",
-    badge: "Popular",
-    rating: "4.6",
-    language: "Gujarati",
-    assignments: "4 Projects",
-    students: "500",
+  // {
+  //   id: 3,
+  //   title: "Professional Web Design Masterclass",
+  //   description:
+  //     "Become a creative web designer by learning HTML, CSS, Bootstrap, Tailwind, and modern layouts.",
+  //   level: "Beginner",
+  //   duration: "6 Weeks",
+  //   img: "assets/img/education/education-5.webp",
+  //   badge: "Popular",
+  //   rating: "4.6",
+  //   language: "Gujarati",
+  //   assignments: "4 Projects",
+  //   students: "500",
 
-    longDescription: [
-      "This course helps you become a professional web designer from scratch.",
-      "Learn responsive layouts, modern UI trends, and real-world website building."
-    ],
+  //   longDescription: [
+  //     "This course helps you become a professional web designer from scratch.",
+  //     "Learn responsive layouts, modern UI trends, and real-world website building."
+  //   ],
 
-    skills: [
-      {
-        icon: "bi bi-layout-text-window",
-        title: "HTML + CSS Mastery",
-        text: "Layouts, Flexbox, Grid System"
-      },
-      {
-        icon: "bi bi-bootstrap",
-        title: "Bootstrap Framework",
-        text: "Modern components & pages"
-      },
-      {
-        icon: "bi bi-palette",
-        title: "Tailwind CSS",
-        text: "Utility-first styling system"
-      },
-      {
-        icon: "bi bi-phone",
-        title: "Responsive Design",
-        text: "Mobile-friendly UI building"
-      }
-    ],
+  //   skills: [
+  //     {
+  //       icon: "bi bi-layout-text-window",
+  //       title: "HTML + CSS Mastery",
+  //       text: "Layouts, Flexbox, Grid System"
+  //     },
+  //     {
+  //       icon: "bi bi-bootstrap",
+  //       title: "Bootstrap Framework",
+  //       text: "Modern components & pages"
+  //     },
+  //     {
+  //       icon: "bi bi-palette",
+  //       title: "Tailwind CSS",
+  //       text: "Utility-first styling system"
+  //     },
+  //     {
+  //       icon: "bi bi-phone",
+  //       title: "Responsive Design",
+  //       text: "Mobile-friendly UI building"
+  //     }
+  //   ],
 
-    requirements: [
-      "No coding experience required",
-      "Creative interest in design"
-    ],
+  //   requirements: [
+  //     "No coding experience required",
+  //     "Creative interest in design"
+  //   ],
 
-    curriculum: [
-      {
-        module: "Design Basics",
-        lessons: ["HTML Structure", "CSS Styling", "Flexbox + Grid"]
-      },
-      {
-        module: "Modern Frameworks",
-        lessons: ["Bootstrap Projects", "Tailwind UI", "Landing Pages"]
-      }
-    ]
-  },
+  //   curriculum: [
+  //     {
+  //       module: "Design Basics",
+  //       lessons: ["HTML Structure", "CSS Styling", "Flexbox + Grid"]
+  //     },
+  //     {
+  //       module: "Modern Frameworks",
+  //       lessons: ["Bootstrap Projects", "Tailwind UI", "Landing Pages"]
+  //     }
+  //   ]
+  // },
 
   // ✅ 4 Node.js Backend
   {
@@ -192,7 +192,7 @@ const courses = [
       "Build powerful backend applications using Node.js, Express, REST APIs, and authentication systems.",
     level: "Intermediate",
     duration: "10 Weeks",
-    img: "assets/img/education/students-7.webp",
+    img: "assets/img/course/node.webp",
     badge: "Certificate",
     rating: "4.8",
     language: "English",
@@ -252,7 +252,7 @@ const courses = [
       "Learn Python Django framework to build secure, scalable, and database-driven web applications.",
     level: "Intermediate",
     duration: "8 Weeks",
-    img: "assets/img/education/campus-4.webp",
+    img: "assets/img/course/django.jpg",
     badge: "New",
     rating: "4.7",
     language: "English",
@@ -312,7 +312,7 @@ const courses = [
       "Understand user experience principles, wireframing, prototyping, and design tools like Figma.",
     level: "Beginner",
     duration: "5 Weeks",
-    img: "assets/img/education/activities-3.webp",
+    img: "assets/img/course/ui-ux.png",
     badge: "Certificate",
     rating: "4.5",
     language: "Hindi",
@@ -372,7 +372,7 @@ const courses = [
       "Become a full-stack developer by learning Laravel framework, CRUD, authentication, and APIs.",
     level: "Intermediate",
     duration: "9 Weeks",
-    img: "assets/img/education/teacher-6.webp",
+    img: "assets/img/course/php.png",
     badge: "Popular",
     rating: "4.6",
     language: "English",
@@ -432,7 +432,7 @@ const courses = [
       "Kickstart your journey in Data Science by learning Python, ML concepts, and real-world datasets.",
     level: "Advanced",
     duration: "12 Weeks",
-    img: "assets/img/education/students-9.webp",
+    img: "assets/img/course/ds-ml.webp",
     badge: "Featured",
     rating: "4.9",
     language: "English",
@@ -492,7 +492,7 @@ const courses = [
       "Learn data cleaning, visualization, dashboards, and analytics using Python, Pandas, and Excel.",
     level: "Beginner",
     duration: "6 Weeks",
-    img: "assets/img/education/campus-4.webp",
+    img: "assets/img/course/data-any.webp",
     badge: "Certificate",
     rating: "4.7",
     language: "Gujarati",

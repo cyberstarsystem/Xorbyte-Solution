@@ -1,17 +1,8 @@
-/**
-* Template Name: Learner
-* Template URL: https://bootstrapmade.com/learner-bootstrap-course-template/
-* Updated: Jul 08 2025 with Bootstrap v5.3.7
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 @charset "UTF-8";
 
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -81,6 +72,11 @@
 :root {
   scroll-behavior: smooth;
 }
+
+.highlight{
+  color: var(--accent-color);
+}
+
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
