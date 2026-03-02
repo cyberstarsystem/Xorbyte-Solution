@@ -15,14 +15,28 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <style>
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+  <script>
+    (function () {
+      emailjs.init("AS1gCZ1xSvhRMTxkJ");
+    })();
+  </script>
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -65,23 +79,27 @@
 
               <div class="enrollment-header text-center mb-5" data-aos="fade-up" data-aos-delay="200">
                 <h2>Enroll in Your Dream Course</h2>
-                <p>Take the next step in your educational journey. Complete the form below to secure your spot in our comprehensive online learning program.</p>
+                <p>Take the next step in your educational journey. Complete the form below to secure your spot in our
+                  comprehensive online learning program.</p>
               </div>
-<!-- <form action="forms/enroll.php" method="POST" data-aos="fade-up" data-aos-delay="300" class="enrollment-form"> -->
-<form action="forms/enroll.php" method="POST" data-aos="fade-up" data-aos-delay="300" class="enrollment-form php-email-form">
+              <!-- <form action="forms/enroll.php" method="POST" data-aos="fade-up" data-aos-delay="300" class="enrollment-form"> -->
+              <!-- <form action="forms/enroll.php" method="POST" data-aos="fade-up" data-aos-delay="300"
+                class="enrollment-form php-email-form"> -->
 
-
+              <form id="enroll-form" class="enrollment-form php-email-form">
                 <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="firstName" class="form-label">First Name *</label>
-                      <input type="text" id="firstName" name="firstName" class="form-control" required="" autocomplete="given-name">
+                      <input type="text" id="firstName" name="firstName" class="form-control" required=""
+                        autocomplete="given-name">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="lastName" class="form-label">Last Name *</label>
-                      <input type="text" id="lastName" name="lastName" class="form-control" required="" autocomplete="family-name">
+                      <input type="text" id="lastName" name="lastName" class="form-control" required=""
+                        autocomplete="family-name">
                     </div>
                   </div>
                 </div>
@@ -102,23 +120,37 @@
                 </div>
 
                 <div class="row mb-4">
-                  <div class="col-12">
+                  <div class="col-md-6">
                     <div class="form-group">
                       <label for="course" class="form-label">Select Course *</label>
                       <select id="course" name="course" class="form-select" required="">
                         <option value="">Choose a course...</option>
-                        <option value="web-development">Full Stack Web Development</option>
-                        <option value="data-science">Data Science &amp; Analytics</option>
-                        <option value="digital-marketing">Digital Marketing Mastery</option>
-                        <option value="ui-ux-design">UI/UX Design Fundamentals</option>
-                        <option value="cybersecurity">Cybersecurity Essentials</option>
-                        <option value="mobile-development">Mobile App Development</option>
+                        <option value="web-development">MERN Stack Web Development</option>
+                        <option value="digital-marketing">React.js with Modern Web Design</option>
+                        <option value="ui-ux-design">Node.js Backend Development</option>
+                        <option value="cybersecurity">Web Development with Python & Django</option>
+                        <option value="mobile-development">UI/UX Design Essentials</option>
+                        <option value="mobile-development">PHP Laravel Full Stack Development</option>
+                        <option value="data-science">Data Science & Machine Learning</option>
+                        <option value="data-science">Data Analysis with Python & Excel</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="education" class="form-label">Education</label>
+                      <select id="education" name="education" class="form-select">
+                        <option value="">Select your education level...</option>
+                        <option value="high-school">High School</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
                   </div>
                 </div>
 
-                <div class="row mb-4">
+                <!-- <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="education" class="form-label">Education Level</label>
@@ -145,17 +177,17 @@
                       </select>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
-                <div class="row mb-4">
+                <!-- <div class="row mb-4">
                   <div class="col-12">
                     <div class="form-group">
                       <label for="motivation" class="form-label">What motivates you to take this course?</label>
                       <textarea id="motivation" name="motivation" class="form-control" rows="4" placeholder="Share your goals and what you hope to achieve..."></textarea>
                     </div>
                   </div>
-                </div>
-
+                </div> -->
+                <!-- 
                 <div class="row mb-4">
                   <div class="col-12">
                     <div class="form-group">
@@ -182,7 +214,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <div class="row mb-4">
                   <div class="col-12">
@@ -205,8 +237,14 @@
                   </div>
                 </div>
 
+
                 <div class="row">
                   <div class="col-12 text-center">
+                    <div class="my-3">
+                      <div class="loading" style="display:none;">Loading...</div>
+                      <div class="error-message" style="display:none;"></div>
+                      <div class="sent-message" style="display:none;">Enrollment submitted successfully ✅</div>
+                    </div>
                     <button type="submit" class="btn btn-enroll">
                       <i class="bi bi-check-circle me-2"></i>
                       Enroll Now
@@ -292,25 +330,79 @@
 
   </main>
 
- <!-- Footer Load Here -->
- <div id="footer"></div>
+  <!-- Footer Load Here -->
+  <div id="footer"></div>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("enroll-form").addEventListener("submit", function (e) {
+      e.preventDefault();
 
+      const form = this;
+      const submitBtn = form.querySelector("button[type='submit']");
+      const loading = form.querySelector(".loading");
+      const errorMessage = form.querySelector(".error-message");
+      const sentMessage = form.querySelector(".sent-message");
+
+      // Disable button
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Processing...";
+
+      loading.style.display = "block";
+      errorMessage.style.display = "none";
+      sentMessage.style.display = "none";
+
+      emailjs.send("service_x7eld7s", "template_stvsaac", {
+        first_name: document.getElementById("firstName").value,
+        last_name: document.getElementById("lastName").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        course: document.getElementById("course").value,
+        education: document.getElementById("education").value,
+        newsletter: document.getElementById("newsletter").checked ? "Yes" : "No"
+      })
+        .then(function () {
+
+          loading.style.display = "none";
+          sentMessage.style.display = "block";
+          form.reset();
+
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enroll Now';
+
+          setTimeout(function () {
+            sentMessage.style.display = "none";
+          }, 5000);
+
+        }, function () {
+
+          loading.style.display = "none";
+          errorMessage.innerHTML = "Failed to submit enrollment ❌";
+          errorMessage.style.display = "block";
+
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enroll Now';
+
+          setTimeout(function () {
+            errorMessage.style.display = "none";
+          }, 5000);
+        });
+    });
+  </script>
 </body>
 
 </html>
