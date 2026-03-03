@@ -970,7 +970,7 @@ section,
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 120px 0 60px;
+  padding: 90px 0 60px;
 }
 
 .courses-hero .hero-content {
@@ -1077,7 +1077,7 @@ section,
 
 .courses-hero .hero-features {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 @media (max-width: 768px) {
