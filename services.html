@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Industry Internship Program | Xorbyte Solution</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.svg" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        /* .hero {
+            background: linear-gradient(-45deg, #2B5CFD, #000049, #1a3bb8, #000066);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            color: white !important;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        } */
+
+        /* .price-box {
+            background: #1e3c72;
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        } */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #2B5CFD, #000049, #1a3bb8, #000066);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease infinite;
+            color: white !important;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+            background-size: 60px 60px;
+            animation: moveParticles 40s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes moveParticles {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(100px, 100px);
+            }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .tech-slide {
+            text-align: center;
+        }
+
+        .tech-slide img {
+            height: 60px;
+            margin-bottom: 10px;
+            transition: 0.3s ease;
+        }
+
+        .tech-slide span {
+            display: block;
+            font-weight: 500;
+        }
+
+        .tech-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        .benefit-card {
+            background: #ffffff;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        .duration-card {
+            background: #ffffff;
+            border-radius: 20px;
+            transition: 0.3s ease;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        .duration-card:hover {
+            transform: translateY(-12px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+        }
+
+        .highlight-duration {
+            border: 2px solid #2B5CFD;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2B5CFD, #000049);
+            padding: 100px 0;
+            border-radius: 30px;
+            margin: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+            background-size: 60px 60px;
+            animation: moveBg 40s linear infinite;
+        }
+
+        @keyframes moveBg {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(100px, 100px);
+            }
+        }
+
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section .btn {
+            transition: 0.3s ease;
+        }
+
+        .cta-section .btn:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+
+
+</head>
+
+<body class="index-page">
+
+    <div id="navbar"></div>
+
+    <main class="main">
+        <!-- Page Title -->
+        <div class="page-title light-background">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <h1 class="mb-2 mb-lg-0">Services</h1>
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="current">Services</li>
+                    </ol>
+                </nav>
+            </div>
+        </div><!-- End Page Title -->
+
+        <section id="service" class="about section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="about-content">
+                            <span class="subtitle">OUR SERVICES</span>
+                            <h2>Custom Software & Digital Solutions Built for Growth</h2>
+                            <p>We design and develop scalable web applications, mobile apps, and backend systems using modern technologies tailored to your business needs.</p>
+                            <!-- <p>Our mission is simple bridge the gap between college education and real IT company
+                                requirements by providing hands-on training, live projects, and career mentorship.</p> -->
+                            <div class="stats-row">
+                                <div class="stats-item">
+                                    <span class="count">10+</span>
+                                    <p>Project Delivered</p>
+                                </div>
+                                <div class="stats-item">
+                                    <span class="count">Modern</span>
+                                    <p>Tech Stack</p>
+                                </div>
+                                <div class="stats-item">
+                                    <span class="count">Scalable</span>
+                                    <p>Architecture</p>
+                                </div>
+                            </div>
+
+                            <div class="hero-buttons mt-5">
+                                <a href="contact.html" class="btn btn-primary">Start a Project</a>
+                                <a href="#services" class="btn btn-outline">Discuss Requirements</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/img/education/education-square-2.webp" alt="About Us"
+                            class="img-fluid rounded-4">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding ">
+            <div class="row justify-content-center align-items-center text-center mb-5">
+                <div class="col-lg-10">
+                    <!-- Section Title -->
+                    <div class="container pb-2 section-title aos-init aos-animate" data-aos="fade-up">
+                        <h2>Services We Provide</h2>
+                    </div><!-- End Section Title -->
+                    <p class="text-muted">
+                        We offer a wide range of services to meet the unique needs of our clients.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row justify-content-center g-4">
+
+                    <!-- Custom Web Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-code-slash fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Custom Web Development</h5>
+                                <p class="">
+                                    We build scalable and secure web applications using MERN stack, Python (Django), and
+                                    PHP (Laravel)
+                                    optimized for performance and business growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WordPress Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-wordpress fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">E-Commerce & CMS Development</h5>
+                                <p class="">
+                                    E-commerce websites, blogs, custom themes, and performance-optimized WordPress &
+                                    Shopify solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shopify Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-bag-check fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">UI/UX Design </h5>
+                                <p class="">
+                                    User centered design, wireframing, prototyping, and visually stunning interfaces for
+                                    web and mobile.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-phone fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Mobile App Development</h5>
+                                <p class="">
+                                    Cross-platform mobile apps with React Native and backend API integration.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend & API Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-server fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Backend & API Development</h5>
+                                <p class="">
+                                    REST APIs, authentication systems, database design, and cloud deployment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend & API Development -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-bar-chart fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Data Science & Machine Learning</h5>
+                                <p class="">
+                                    Data analysis, predictive modeling, and AI-driven solutions for business
+                                    intelligence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Industry Internship Program -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card  service-card">
+                            <div class="card-body text-center p-4">
+                                <i class="bi bi-mortarboard fs-1 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Industry Internship Program</h5>
+                                <p class="">
+                                    Project-based internship with real workflow, GitHub collaboration, and live
+                                    deployment.
+                                </p>
+                                <a href="internship.html" class="btn btn-primary mt-3 px-4 rounded-pill">
+                                    Apply for Internship
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Load Here -->
+    <div id="footer"></div>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
