@@ -5124,7 +5124,7 @@ section,
   color: var(--contrast-color);
   border: none;
   padding: 16px 40px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   border-radius: 50px;
   transition: all 0.3s ease;
