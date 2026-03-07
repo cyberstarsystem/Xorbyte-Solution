@@ -123,8 +123,8 @@
                 <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="course" class="form-label">Technology *</label>
-                      <select id="course" name="course" class="form-select" required="">
+                      <label for="technology" class="form-label">Technology *</label>
+                      <select id="technology" name="technology" class="form-select" required="">
                         <option value="">Select Technology...</option>
                         <option value="web-development">MERN Stack </option>
                         <option value="digital-marketing">Python (Django)</option>
@@ -306,9 +306,8 @@
         last_name: document.getElementById("lastName").value,
         email: document.getElementById("email").value,
         phone: document.getElementById("phone").value,
-        course: document.getElementById("course").value,
-        education: document.getElementById("education").value,
-        newsletter: document.getElementById("newsletter").checked ? "Yes" : "No"
+        technology: document.getElementById("technology").value,
+        education: document.getElementById("education").value
       })
         .then(function () {
 
