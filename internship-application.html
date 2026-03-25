@@ -151,7 +151,7 @@
                   </div>
                 </div>
 
-             
+
                 <div class="row mb-4">
                   <div class="col-12">
                     <div class="form-group">
@@ -162,7 +162,7 @@
                             I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> *
                           </label>
                         </div>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -311,6 +311,18 @@
       })
         .then(function () {
 
+          fetch("https://script.google.com/macros/s/AKfycbzGXgse59zGZ3HxwUMcgYJlYl72jZsV4TvTdn5a8QOlZ5h2Yo5gVbVYGk38pI4Ht8UgUA/exec", {
+            method: "POST",
+            body: JSON.stringify({
+              first_name: document.getElementById("firstName").value,
+              last_name: document.getElementById("lastName").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              technology: document.getElementById("technology").value,
+              education: document.getElementById("education").value
+            })
+          });
+
           loading.style.display = "none";
           sentMessage.style.display = "block";
           form.reset();
@@ -322,19 +334,21 @@
             sentMessage.style.display = "none";
           }, 5000);
 
-        }, function () {
+        },
+          function () {
 
-          loading.style.display = "none";
-          errorMessage.innerHTML = "Failed to submit enrollment ❌";
-          errorMessage.style.display = "block";
 
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enroll Now';
+            loading.style.display = "none";
+            errorMessage.innerHTML = "Failed to submit enrollment ❌";
+            errorMessage.style.display = "block";
 
-          setTimeout(function () {
-            errorMessage.style.display = "none";
-          }, 5000);
-        });
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i> Enroll Now';
+
+            setTimeout(function () {
+              errorMessage.style.display = "none";
+            }, 5000);
+          });
     });
   </script>
 </body>
