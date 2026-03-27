@@ -135,12 +135,14 @@
    * Preloader
    */
   const preloader = document.querySelector('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
-  }
 
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    preloader.style.opacity = '0';
+    preloader.style.transition = '0.5s ease';
+    setTimeout(() => preloader.remove(), 500);
+  }, 1500);
+});
   /**
    * Scroll top button
    */
