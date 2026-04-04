@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
 
   <!-- Fonts -->
@@ -120,10 +120,10 @@
 
             <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
               <h3>Get in Touch</h3>
-              <p>Have questions about our IT services, web development projects, or internship programs? 
-Whether you're a business looking to build a digital product or a student 
-seeking real-world technical experience, our team is here to guide you. 
-Fill out the form below or contact us directly — we’ll respond as soon as possible.</p>
+              <p>Have questions about our IT services, web development projects, or internship programs?
+                Whether you're a business looking to build a digital product or a student
+                seeking real-world technical experience, our team is here to guide you.
+                Fill out the form below or contact us directly — we’ll respond as soon as possible.</p>
 
               <form id="contact-form" class="php-email-form">
                 <div class="row">
@@ -154,10 +154,11 @@ Fill out the form below or contact us directly — we’ll respond as soon as po
                 <div class="form-submit">
                   <button type="submit">Submit Inquiry</button>
                   <div class="social-links">
-                    <a href="#"><i class="bi bi-twitter"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
+
+                    <a href="https://www.instagram.com/xorbytesolution/" target="_blank" aria-label="Instagram"><i
+                        class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/xorbyte-solution/" target="_blank"
+                      aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                   </div>
                 </div>
               </form>
@@ -203,57 +204,57 @@ Fill out the form below or contact us directly — we’ll respond as soon as po
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  const form = this;
-  const submitBtn = form.querySelector("button[type='submit']");
-  const loading = document.querySelector(".loading");
-  const errorMessage = document.querySelector(".error-message");
-  const sentMessage = document.querySelector(".sent-message");
+      const form = this;
+      const submitBtn = form.querySelector("button[type='submit']");
+      const loading = document.querySelector(".loading");
+      const errorMessage = document.querySelector(".error-message");
+      const sentMessage = document.querySelector(".sent-message");
 
-  // ✅ Prevent multiple clicks
-  submitBtn.disabled = true;
-  submitBtn.innerText = "Sending...";
+      // ✅ Prevent multiple clicks
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Sending...";
 
-  loading.style.display = "block";
-  errorMessage.style.display = "none";
-  sentMessage.style.display = "none";
+      loading.style.display = "block";
+      errorMessage.style.display = "none";
+      sentMessage.style.display = "none";
 
-  emailjs.send("service_x7eld7s", "template_tnct6l4", {
-    from_name: document.getElementById("name").value,
-    from_email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.querySelector("textarea[name='message']").value,
-  })
-  .then(function(response) {
-      loading.style.display = "none";
-      sentMessage.style.display = "block";
-      form.reset();
+      emailjs.send("service_x7eld7s", "template_tnct6l4", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.querySelector("textarea[name='message']").value,
+      })
+        .then(function (response) {
+          loading.style.display = "none";
+          sentMessage.style.display = "block";
+          form.reset();
 
-      // ✅ Re-enable button
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Submit Inquiry";
+          // ✅ Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Submit Inquiry";
 
-      setTimeout(function() {
-          sentMessage.style.display = "none";
-      }, 5000);
+          setTimeout(function () {
+            sentMessage.style.display = "none";
+          }, 5000);
 
-  }, function(error) {
-      loading.style.display = "none";
-      errorMessage.innerHTML = "Failed to send message ❌";
-      errorMessage.style.display = "block";
+        }, function (error) {
+          loading.style.display = "none";
+          errorMessage.innerHTML = "Failed to send message ❌";
+          errorMessage.style.display = "block";
 
-      // ✅ Re-enable button
-      submitBtn.disabled = false;
-      submitBtn.innerText = "Submit Inquiry";
+          // ✅ Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Submit Inquiry";
 
-      setTimeout(function() {
-          errorMessage.style.display = "none";
-      }, 5000);
-  });
-});
-  </script> 
+          setTimeout(function () {
+            errorMessage.style.display = "none";
+          }, 5000);
+        });
+    });
+  </script>
 </body>
 
 </html>

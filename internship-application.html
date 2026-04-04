@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
 
   <!-- Fonts -->
@@ -114,13 +114,19 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="phone" class="form-label">Phone Number</label>
-                      <input type="tel" id="phone" name="phone" class="form-control" autocomplete="tel">
+                      <label for="phone" class="form-label">Phone Number *</label>
+                      <input type="tel" id="phone" name="phone" class="form-control" required="" autocomplete="tel">
                     </div>
                   </div>
                 </div>
 
                 <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="college" class="form-label">College Name *</label>
+                      <input type="text" id="college" name="college" class="form-control" required="" autocomplete="organization">
+                    </div>
+                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="technology" class="form-label">Technology *</label>
@@ -137,16 +143,27 @@
                       </select>
                     </div>
                   </div>
+                </div>
+
+                <div class="row mb-4">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="education" class="form-label">Education</label>
+                      <label for="education" class="form-label">Qualification *</label>
                       <select id="education" name="education" class="form-select">
-                        <option value="">Select your education level...</option>
-                        <option value="high-school">High School</option>
-                        <option value="bachelor">Bachelor's Degree</option>
-                        <option value="master">Master's Degree</option>
-                        <option value="other">Other</option>
+                        <option value="">Select your qualification level...</option>
+                        <option value="high-school">BCA</option>
+                        <option value="bachelor">MCA</option>
+                        <option value="master">Diploma</option>
+                        <option value="other">Degree</option>
                       </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="semester" class="form-label">Semester *</label>
+                      <input type="text" id="semester" name="semester" min="1" max="8" class="form-control" required=""
+                        autocomplete="off">
+                      
                     </div>
                   </div>
                 </div>
