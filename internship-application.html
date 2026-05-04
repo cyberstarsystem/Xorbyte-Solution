@@ -124,7 +124,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="college" class="form-label">College Name *</label>
-                      <input type="text" id="college" name="college" class="form-control" required="" autocomplete="organization">
+                      <input type="text" id="college" name="college" class="form-control" required=""
+                        autocomplete="organization">
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -132,14 +133,14 @@
                       <label for="technology" class="form-label">Technology *</label>
                       <select id="technology" name="technology" class="form-select" required="">
                         <option value="">Select Technology...</option>
-                        <option value="web-development">MERN Stack </option>
-                        <option value="digital-marketing">Python (Django)</option>
+                        <option value="MERN Stack">MERN Stack </option>
+                        <option value="Python (Django)">Python (Django)</option>
                         <!-- <option value="ui-ux-design">Node.js Backend Development</option> -->
                         <!-- <option value="cybersecurity">Web Development with Python & Django</option> -->
-                        <option value="mobile-development">UI/UX</option>
-                        <option value="mobile-development">PHP (Laravel)</option>
+                        <option value="ui-ux">UI/UX</option>
+                        <option value="php-laravel">PHP (Laravel)</option>
                         <option value="data-science">Data Science & Machine Learning</option>
-                        <option value="data-science">Data Analysis with Python & Excel</option>
+                        <option value="data-analysis">Data Analysis with Python & Excel</option>
                       </select>
                     </div>
                   </div>
@@ -151,10 +152,10 @@
                       <label for="education" class="form-label">Qualification *</label>
                       <select id="education" name="education" class="form-select">
                         <option value="">Select your qualification level...</option>
-                        <option value="high-school">BCA</option>
-                        <option value="bachelor">MCA</option>
-                        <option value="master">Diploma</option>
-                        <option value="other">Degree</option>
+                        <option value="BCA">BCA</option>
+                        <option value="MCA">MCA</option>
+                        <option value="Diploma">Diploma</option>
+                        <option value="Degree">Degree</option>
                       </select>
                     </div>
                   </div>
@@ -163,7 +164,7 @@
                       <label for="semester" class="form-label">Semester *</label>
                       <input type="text" id="semester" name="semester" min="1" max="8" class="form-control" required=""
                         autocomplete="off">
-                      
+
                     </div>
                   </div>
                 </div>
@@ -337,21 +338,25 @@
         email: document.getElementById("email").value,
         phone: document.getElementById("phone").value,
         technology: document.getElementById("technology").value,
-        education: document.getElementById("education").value
+        education: document.getElementById("education").value,
+        college: document.getElementById("college").value,      // ✅ add
+        semester: document.getElementById("semester").value     // ✅ add
       })
         .then(function () {
 
-          fetch("https://script.google.com/macros/s/AKfycbzGXgse59zGZ3HxwUMcgYJlYl72jZsV4TvTdn5a8QOlZ5h2Yo5gVbVYGk38pI4Ht8UgUA/exec", {
-            method: "POST",
-            body: JSON.stringify({
-              first_name: document.getElementById("firstName").value,
-              last_name: document.getElementById("lastName").value,
-              email: document.getElementById("email").value,
-              phone: document.getElementById("phone").value,
-              technology: document.getElementById("technology").value,
-              education: document.getElementById("education").value
-            })
-          });
+          fetch("https://script.google.com/macros/s/AKfycbylUr-bvArVQ2aGldVZ14O6SDvLXc5-AIFWcjlnczwweJwDoa-jrYUEvSifp1EDbhf1/exec", {
+  method: "POST",
+  body: new URLSearchParams({
+    first_name: document.getElementById("firstName").value,
+    last_name: document.getElementById("lastName").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    technology: document.getElementById("technology").value,
+    education: document.getElementById("education").value,
+    college: document.getElementById("college").value,
+    semester: document.getElementById("semester").value
+  })
+});
 
           loading.style.display = "none";
           sentMessage.style.display = "block";
