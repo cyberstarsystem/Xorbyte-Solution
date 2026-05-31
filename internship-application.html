@@ -332,7 +332,7 @@
       errorMessage.style.display = "none";
       sentMessage.style.display = "none";
 
-      emailjs.send("service_x7eld7s", "template_stvsaac", {
+      emailjs.send("service_6g467gd", "template_stvsaac", {
         first_name: document.getElementById("firstName").value,
         last_name: document.getElementById("lastName").value,
         email: document.getElementById("email").value,
@@ -345,18 +345,18 @@
         .then(function () {
 
           fetch("https://script.google.com/macros/s/AKfycbylUr-bvArVQ2aGldVZ14O6SDvLXc5-AIFWcjlnczwweJwDoa-jrYUEvSifp1EDbhf1/exec", {
-  method: "POST",
-  body: new URLSearchParams({
-    first_name: document.getElementById("firstName").value,
-    last_name: document.getElementById("lastName").value,
-    email: document.getElementById("email").value,
-    phone: document.getElementById("phone").value,
-    technology: document.getElementById("technology").value,
-    education: document.getElementById("education").value,
-    college: document.getElementById("college").value,
-    semester: document.getElementById("semester").value
-  })
-});
+            method: "POST",
+            body: new URLSearchParams({
+              first_name: document.getElementById("firstName").value,
+              last_name: document.getElementById("lastName").value,
+              email: document.getElementById("email").value,
+              phone: document.getElementById("phone").value,
+              technology: document.getElementById("technology").value,
+              education: document.getElementById("education").value,
+              college: document.getElementById("college").value,
+              semester: document.getElementById("semester").value
+            })
+          });
 
           loading.style.display = "none";
           sentMessage.style.display = "block";
